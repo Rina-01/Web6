@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NgxDadataModule } from '@kolkov/ngx-dadata';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +15,9 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule, 
+    NgxDadataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

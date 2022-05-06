@@ -1,12 +1,24 @@
-<div class="box ">              
-    <form>
-        <div class="fio">
-            <p>ФИО:</p>
-            <input type="text" name="fio">
-        </div>
-        <div class="adr">
-            <p>Адрес:</p>
-            <input type="text" name="adres">
-        </div>
-    </form>            
+<a name="top"></a>
+<div *ngIf="selectedUser" class="alert top" role="alert">
+    <h2>{{selectedUser.id}}  {{selectedUser.name}}</h2>
+    <p>Редактирование:</p>
+    <div>
+      <ngx-dadata [(ngModel)]="selectedUser.name" [config]="configFio" id="fio" placeholder="ФИО" (keyup.enter)="updateUserFio($event)"></ngx-dadata>
+      <ngx-dadata [(ngModel)]="selectedUser.address" [config]="configAddress" id="address" placeholder="АДРЕС" (keyup.enter)="updateUserAddress($event)"></ngx-dadata>
+    </div>
 </div>
+  
+<ul>
+    <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
+        <a href="#top">
+          <div class="alert alert-primary" role="alert">
+            <div class="id"><p>{{user.id}}</p></div>
+            <div class="data">
+                <p>ФИО: {{user.name}}</p>
+                <p>Адрес: {{user.address}}</p>
+            </div>
+          </div> 
+        </a>
+    </li>    
+</ul>
+

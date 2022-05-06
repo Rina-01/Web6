@@ -18,7 +18,9 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@kolkov/ngx-dadata": "^1.0.3",
     "rxjs": "~7.5.0",
+    "safevalues": "^0.1.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
